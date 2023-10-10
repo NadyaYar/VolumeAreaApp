@@ -39,33 +39,31 @@ public class MainActivity extends AppCompatActivity {
         gridView.setAdapter(adapter);
         gridView.setNumColumns(2);
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Shape selectedShape = shapes.get(i);
-                Intent intent;
 
-                switch (selectedShape.getShapeName()) {
-                    case "cube":
-                        intent = new Intent(getApplicationContext(), Cube.class);
-                        break;
-                    case "sphere":
-                        intent = new Intent(getApplicationContext(), Sphere.class);
-                        break;
-                    case "cylinder":
-                        intent = new Intent(getApplicationContext(),Cylinder.class);
-                        break;
-                    case "prism":
-                        intent = new Intent(getApplicationContext(), Prism.class);
-                        break;
-                    default:
-                        intent = null;
-                        break;
-                }
+        gridView.setOnItemClickListener((AdapterView<?> adapterView, View view, int i, long l) -> {
+            Shape selectedShape = shapes.get(i);
+            Intent intent;
 
-                if (intent != null) {
-                    startActivity(intent);
-                }
+            switch (selectedShape.getShapeName()) {
+                case "cube":
+                    intent = new Intent(getApplicationContext(), Cube.class);
+                    break;
+                case "sphere":
+                    intent = new Intent(getApplicationContext(), Sphere.class);
+                    break;
+                case "cylinder":
+                    intent = new Intent(getApplicationContext(), Cylinder.class);
+                    break;
+                case "prism":
+                    intent = new Intent(getApplicationContext(), Prism.class);
+                    break;
+                default:
+                    intent = null;
+                    break;
+            }
+
+            if (intent != null) {
+                startActivity(intent);
             }
         });
     }

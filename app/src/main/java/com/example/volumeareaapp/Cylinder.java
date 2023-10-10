@@ -27,18 +27,13 @@ public class Cylinder extends AppCompatActivity {
         heightEdit = findViewById(R.id.editTextCylinderHeight);
         button = findViewById(R.id.buttonCylinder);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String r = radiusEdit.getText().toString();
-                int radius = Integer.parseInt(r);
-                String h = heightEdit.getText().toString();
-                int height = Integer.parseInt(h);
+        button.setOnClickListener((View view)->{String r = radiusEdit.getText().toString();
+            int radius = Integer.parseInt(r);
+            String h = heightEdit.getText().toString();
+            int height = Integer.parseInt(h);
 
-                double volume = Math.PI * radius * radius * height;
-                result.setText(" V = " + volume + " m^3");
-            }
-        });
+            double volume = Math.PI * radius * radius * height;
+            result.setText(" V = " + volume + " m^3");});
 
     }
 }

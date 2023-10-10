@@ -27,16 +27,13 @@ public class Sphere extends AppCompatActivity {
         textViewResult = findViewById(R.id.resultSphere);
         button = findViewById(R.id.button);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String radius = sphereRadius.getText().toString();
-                int r = Integer.parseInt(radius);
+        button.setOnClickListener((View view) -> {
+            String radius = sphereRadius.getText().toString();
+            int r = Integer.parseInt(radius);
 
-                double volume = (4.0 / 3.0) * Math.PI * r * r * r;
-                double roundedVolume = Math.round(volume * 10) / 10.0;
-                textViewResult.setText("V = " + roundedVolume + " m^3");
-            }
+            double volume = (4.0 / 3.0) * Math.PI * r * r * r;
+            double roundedVolume = Math.round(volume * 10) / 10.0;
+            textViewResult.setText("V = " + roundedVolume + " m^3");
         });
     }
 }

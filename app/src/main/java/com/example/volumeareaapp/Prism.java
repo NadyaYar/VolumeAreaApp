@@ -27,18 +27,13 @@ public class Prism extends AppCompatActivity {
         editArea = findViewById(R.id.editTextArea);
         button = findViewById(R.id.buttonPrism);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String h = editHeight.getText().toString();
-                int height = Integer.parseInt(h);
-                String a = editArea.getText().toString();
-                int area = Integer.parseInt(a);
+        button.setOnClickListener((View view)->{String h = editHeight.getText().toString();
+            int height = Integer.parseInt(h);
+            String a = editArea.getText().toString();
+            int area = Integer.parseInt(a);
 
-                double volume = area * height;
+            double volume = area * height;
 
-                result.setText("V = " + volume + " m^3");
-            }
-        });
+            result.setText("V = " + volume + " m^3");});
     }
 }

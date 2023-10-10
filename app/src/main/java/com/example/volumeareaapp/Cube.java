@@ -24,14 +24,9 @@ public class Cube extends AppCompatActivity {
         editText = findViewById(R.id.editTextCube);
         button = findViewById(R.id.buttonCube);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String length = editText.getText().toString();
-                int l = Integer.parseInt(length);
-                double volume = l * l * l;
-                result.setText("V = " + volume + " m^3");
-            }
-        });
+        button.setOnClickListener((View view) -> { String length = editText.getText().toString();
+            int l = Integer.parseInt(length);
+            double volume = l * l * l;
+            result.setText("V = " + volume + " m^3");});
     }
 }
